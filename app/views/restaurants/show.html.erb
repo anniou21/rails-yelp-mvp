@@ -1,0 +1,18 @@
+<div class="container mt-5">
+      <h6>restaurants#show</h6>
+  <div class="col-6">
+    <div class="card-product-true">
+        <h2 class="font-weight-bolder m-3"><%= @restaurant.name %></h2>
+        <h3 class="font-weight-lighter m-3"><strong>Address :</strong><%= @restaurant.address %></h3>
+        <h3 class="font-weight-lighter m-3"><strong>Phone :</strong><%= @restaurant.phone_number %></h3>
+        <h3 class="font-weight-lighter m-3"><strong>Category :</strong><%= @restaurant.category %></h3>
+        <p class="font-weight-lighter m-3"><strong>Commentaire :</strong><% @restaurant.reviews.each do |restaurant| %>
+          <%= restaurant.content %>
+          <% end %>
+        </p>
+        <%= link_to 'Back home', restaurants_path, class:"btn btn-primary m-3"%>
+        <%= link_to 'laisser un commentaire',   new_restaurant_review_path(@restaurant), class:"btn btn-secondary m-3"%>
+
+    </div>
+  </div>
+</div>

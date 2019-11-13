@@ -1,0 +1,21 @@
+<div class="container mt-5">
+  <div class="col-6">
+    <h5>Restaurants#index</h5>
+    <h2>Find a place to eat !</h2>
+            <% @restaurants.each do |restaurant| %>
+     <div class="card-product mb-3">
+          <div class="card-product-infos">
+              <h2><%= restaurant.name  %></h2>
+              <p><strong>Address :</strong> <%= restaurant.address  %></p>
+              <p><strong>Phone :</strong> <%= restaurant.phone_number  %></p>
+              <p style="margin-bottom: 10px;"><strong>Category :</strong> <%= restaurant.category  %></p>
+
+              <%= link_to 'En savoir plus', restaurant_path(restaurant), class:"btn btn-warning"%>
+          </div>
+    </div>
+    <% end %>
+  </div>
+  <div class="col-3 mb-3">
+     <%= link_to 'Ajouter un resto',  new_restaurant_path, class:"btn btn-success"%>
+  </div>
+</div>
